@@ -1,12 +1,15 @@
-
+import ContextProvider from './context/ContextProvider';
 import "./App.css";
 import Home from "./components/Home/Home";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
-
   return (
     <>
-      <Home />
+      <ContextProvider>
+        <Sidebar />
+        <Home />
+      </ContextProvider>
     </>
   );
 }

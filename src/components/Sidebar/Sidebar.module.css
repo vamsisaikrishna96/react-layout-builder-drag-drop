@@ -1,0 +1,48 @@
+.sidebar {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 300px;
+  height: 100%;
+  right: 0;
+  margin-top: 7px;
+  transform: translateX(110%);
+  transition: all 0.4s ease-in-out;
+  border: 1px solid blueviolet;
+}
+
+/* TODO: Drafted work for sidebar shawdow implementation */
+/* .overlay {
+    width: 70%;
+    background: rgba(0, 0, 0, 0.3);
+    height: 100%;
+  } */
+
+.visibleSideBar {
+  transform: translateX(0);
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: white;
+}
+
+.dismissBar {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: -30px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11% 0 0 11%;
+}
+
+.closeIcon {
+  width: 20px;
+  height: 20px;
+}
