@@ -1,0 +1,19 @@
+.rowContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 35px;
+  flex-direction: column;
+}
+
+.header {
+  height: 30px;
+  width: 100%;
+  background-color: #b7e4e8;
+}
+
+
+
+

@@ -1,0 +1,23 @@
+.addElementContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.elementSection {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  width:100%;
+  margin-left:15px;
+  flex-direction: column;
+}
+
+.elementSectionTitle{
+    font-weight: bold;
+    text-align: left;
+}
