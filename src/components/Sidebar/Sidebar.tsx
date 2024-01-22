@@ -10,7 +10,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (sideBarVisibility) setComponent(childComponent);
-  }, [sideBarVisibility]);
+  }, [sideBarVisibility, childComponent]);
 
   return (
     <div

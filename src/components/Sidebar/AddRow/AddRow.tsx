@@ -22,7 +22,8 @@ const AddRow = () => {
     const columnArray: IHomePageColumnElement[] = [];
     const columnLengthArray = new Array(columnNo);
     columnLengthArray.fill(columnNo);
-    for (let i of columnLengthArray) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, prefer-const
+    for (let _i of columnLengthArray) {
       columnArray.push({
         contentType: STRING_CONSTANTS.UNSET,
         id: uuidv4(),
@@ -34,8 +35,8 @@ const AddRow = () => {
   function addColumnsToElement(columnNo: number) {
     const homePageElementsData: IHomePageElement[] = [...homePageElements];
     const columnsData = setColumnsInElement(columnNo);
-    const elementIndex=currentIndexElement?.elementIndex;
-    if (elementIndex!== undefined) {
+    const elementIndex = currentIndexElement?.elementIndex;
+    if (elementIndex !== undefined) {
       homePageElementsData[elementIndex as number] = {
         ...homePageElementsData[elementIndex as number],
         type: STRING_CONSTANTS.ROW,
