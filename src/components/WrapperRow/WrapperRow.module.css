@@ -1,0 +1,66 @@
+.wrapperRowContainer {
+  position: relative;
+  height: 100%;
+  margin: 40px 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapperAddRowButton {
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  cursor: pointer;
+  background-color: aquamarine;
+  border-radius: 50%;
+  visibility: hidden;
+}
+
+.wrapperAddRowIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+}
+
+.wrapperActions {
+  position: absolute;
+  top: -11px;
+  padding: 3px;
+  cursor: pointer;
+  background-color: aquamarine;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  visibility: hidden;
+}
+
+.wrapperActionIcons {
+  left: calc(100% - 21px);
+}
+
+.wrapperMoveUpDownActions {
+  right: calc(100% - 48px);
+}
+
+.disabledIcon {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.wrapperRowContainer:hover {
+  border: 2px solid blue;
+}
+
+.wrapperRowContainer:hover .wrapperAddRowButton {
+  visibility: visible;
+}
+
+.wrapperRowContainer:hover .wrapperActions {
+  visibility: visible;
+}

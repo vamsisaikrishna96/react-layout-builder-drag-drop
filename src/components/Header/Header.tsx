@@ -3,16 +3,12 @@ import columnSVG from "../../assets/icons/column.svg";
 import elementSVG from "../../assets/icons/element.svg";
 import { useContext } from "react";
 import { ContextData } from "../../context/ContextProvider";
-import AddRow from "../Sidebar/components/AddColumn/AddRow";
-import AddElement from "../Sidebar/components/AddElement/AddElement";
+import AddRow from "../Sidebar/AddRow/AddRow";
+import AddElement from "../Sidebar/AddElement/AddElement";
 
 const Header = () => {
-  const { setSideBarVisibility, setChildComponent } = useContext(ContextData);
+  const { setChildComponentAndVisibility } = useContext(ContextData);
 
-  function setChildComponentAndVisibility(component: React.ReactNode) {
-    setChildComponent(component);
-    setSideBarVisibility(true);
-  }
   return (
     <div className={styles.header}>
       <div className={styles.headerActions}>
