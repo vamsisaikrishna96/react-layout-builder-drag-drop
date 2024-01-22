@@ -1,7 +1,9 @@
 # Layout Builder - Built with (React + TypeScript + Vite)
 
 Developed minimal version of layout builder in this repository which can drag and drop elements on to the home screen.
-Hosted here - [Layout Builder Application](https://astonishing-cactus-26933d.netlify.app/)
+
+Deployed here - [Layout Builder Application](https://astonishing-cactus-26933d.netlify.app/)
+Link for Video Recording: [Layout Builder Application Screen Recording](https://drive.google.com/file/d/1EhN3veKsf4YUguOJPwJjdJ9gRQMYA64I/view?usp=sharing)
 
 Currently, this application has the below features:
 - Add Rows with columns
