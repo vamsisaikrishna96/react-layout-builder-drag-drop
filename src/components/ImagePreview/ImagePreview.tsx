@@ -12,7 +12,7 @@ const ImagePreview = ({ imageSource }: IImagePreview) => {
       {imageSource ? (
         <img src={imageSource} className={styles.image} />
       ) : (
-        <div className={styles.noImage}>No Preview Available</div>
+        <div className={styles.noImage}>No Image Preview Available</div>
       )}
     </div>
   );
