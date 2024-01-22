@@ -2,7 +2,6 @@ import { STRING_CONSTANTS } from "./stringConstants";
 import HeadlineSVG from "./../assets/icons/headline.svg";
 import SubHeadlineSVG from "../assets/icons/sub-headline.svg";
 import ParagraphSVG from "../assets/icons/paragraph.svg";
-import listSVG from "../assets/icons/list.svg";
 import ImageSVG from "../assets/icons/image.svg";
 
 export interface IElementPage {
@@ -31,11 +30,7 @@ export const addElementPageData: IElementPage[] = [
       {
         name: STRING_CONSTANTS.PARAGRAPH,
         image: ParagraphSVG,
-      },
-      {
-        name: STRING_CONSTANTS.BULLET_LIST,
-        image: listSVG,
-      },
+      }
     ],
   },
   {
