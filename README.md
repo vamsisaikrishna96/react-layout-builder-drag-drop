@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Layout Builder - Built with (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Developed minimal version of layout builder in this repository which can drag and drop elements on to the home screen.
 
-Currently, two official plugins are available:
+Currently, this application has the below features:
+- Add Rows with columns
+- There is a ==Media Editor== by which you can add data to the elements post adding them to the columns.
+- A wrapper is developed around each column / row and has the below functionalities.
+  Row
+  - Wrapper is only visible and actionable on hover
+  - Re-arrange the rows up and down using arrows on row wrapper
+  - Delete a row by clicking on delete icon on row wrapper
+  - Add a row by clicking on add icon on row wrapper
+  - Blue bordered wrapper indicates row element in the application
+  - Min one row should be there. Cannot delete all the rows.
+    
+  Column
+  - Wrapper is only visible and actionable on hover
+  - ==Drag and Drop== elements directly into columns
+  - Columns are of 4 types - 3 text and 1 image
+  - Difference of font, font-weight indicates the type of text. for example: Heading, Sub-Heading, Paragraph
+  - Add a column by clicking the plus icon on the wrapper.
+  - Delete a column by clicking the delete icon on the wrapper.
+  - Orange bordered wrapper indicates column in the application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ There is no CSS library used for styling the application. ==Plain CSS== has been used for development.
+ Written in pure typescript by adding interfaces and return types wherever required.
 
-## Expanding the ESLint configuration
+ Choosed Vite as it is faster due to its module bundling process when compared to CRA(Create React App).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ Steps to follow while running code for the first time in machine:
+ ```
+  - yarn - for installing all the necessary packages
+  - yarn dev - for starting the application
+ ```
