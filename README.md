@@ -29,7 +29,8 @@ Currently, this application has the below features:
  Choosed Vite as it is faster due to its module bundling process when compared to CRA(Create React App).
 
  Steps to follow while running code for the first time in machine:
- ```
-  - yarn - for installing all the necessary packages
-  - yarn dev - for starting the application
- ```
+
+  - `yarn` - for installing all the necessary packages
+  - `yarn dev` - for starting the application
+  - `yarn lint` - for linting the application
+
