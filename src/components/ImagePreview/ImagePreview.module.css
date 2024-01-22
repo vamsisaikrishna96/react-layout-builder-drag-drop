@@ -1,17 +1,18 @@
 .imagePreviewContainer {
   width: 100%;
-  margin: 40px 10%;
-  background-color: #ccf2ff;
+  height: 120px;
+  background-color: white;
   border-radius: 5px;
-  border: 1px solid black;
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 5px 10px;
+  box-sizing: border-box;
 }
 
 .image {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 .noImage {
@@ -19,4 +20,8 @@
   text-align: center;
   font-size: 16px;
   font-weight: bold;
+}
+
+.heightUnset {
+  height: unset;
 }

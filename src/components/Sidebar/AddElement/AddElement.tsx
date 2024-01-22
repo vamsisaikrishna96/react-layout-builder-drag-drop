@@ -9,6 +9,7 @@ import {
 import { useContext } from "react";
 import { ContextData } from "../../../context/ContextProvider";
 import { v4 as uuidv4 } from "uuid";
+import { IHomePageElement } from "../../../interfaces/HomePageElement";
 
 const ELEMENTS: string[] = [STRING_CONSTANTS.TEXT, STRING_CONSTANTS.MEDIA];
 const AddElement = () => {
@@ -21,27 +22,44 @@ const AddElement = () => {
     setAddColumn,
   } = useContext(ContextData);
 
+  /**
+   *
+   * @param columnMedia updates columnmedia from unset to selected type. this function also adds new column. we are checking that by addColumn state variable from context
+   */
   function updateColumnData(columnMedia: string) {
     const homePageElementsData = [...homePageElements];
-    const { columns } =
+    const homePageElement: IHomePageElement =
       homePageElementsData[currentIndexElement?.elementIndex as number];
-    if (columns) {
+    if (homePageElement?.columns) {
       if (addColumn) {
-        columns?.push({
+        homePageElement?.columns?.push({
           contentType: columnMedia,
           id: uuidv4(),
         });
       } else {
-        columns[currentIndexElement?.columnIndex as number] = {
-          ...columns[currentIndexElement?.columnIndex as number],
-          contentType: columnMedia,
-        };
+        if (homePageElement?.columns) {
+          homePageElement.columns[currentIndexElement?.columnIndex as number] =
+            {
+              ...homePageElement?.columns[
+                currentIndexElement?.columnIndex as number
+              ],
+              contentType: columnMedia,
+            };
+        }
       }
     }
 
     setHomePageElements([...homePageElementsData]);
     setAddColumn(false);
     setSideBarVisibility(false);
+  }
+
+  function handleAndSetDragData(
+    e: React.DragEvent<HTMLDivElement>,
+    nameOfItem: string
+  ) {
+    if (e.dataTransfer)
+      e.dataTransfer.setData(STRING_CONSTANTS.ITEM_TO_BE_ADDED, nameOfItem);
   }
 
   return (
@@ -54,6 +72,10 @@ const AddElement = () => {
               {element.items.map((item: IElementItem) => (
                 <div
                   key={item.name}
+                  draggable
+                  onDragStart={(event) =>
+                    handleAndSetDragData(event, item.name)
+                  }
                   className={globalStyles.column}
                   onClick={() => updateColumnData(item.name)}
                 >

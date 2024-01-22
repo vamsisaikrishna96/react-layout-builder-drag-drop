@@ -52,8 +52,6 @@ const ContextProvider = ({ children }: AppProviderComponentProps) => {
     component: React.ReactNode,
     elementIndex?: ICurrentIndex
   ) {
-    console.log(homePageElements);
-
     elementIndex !== null && setCurrentIndexElement(elementIndex);
     setChildComponent(component);
     setSideBarVisibility(true);

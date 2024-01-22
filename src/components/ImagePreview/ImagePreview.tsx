@@ -6,7 +6,9 @@ interface IImagePreview {
 
 const ImagePreview = ({ imageSource }: IImagePreview) => {
   return (
-    <div className={styles.imagePreviewContainer}>
+    <div
+      className={`${styles.imagePreviewContainer} ${imageSource ? styles.heightUnset : ""}`}
+    >
       {imageSource ? (
         <img src={imageSource} className={styles.image} />
       ) : (

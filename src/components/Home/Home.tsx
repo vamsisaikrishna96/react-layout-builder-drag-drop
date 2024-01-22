@@ -26,25 +26,19 @@ const {
 } = STRING_CONSTANTS;
 const Home = () => {
   const { homePageElements, currentIndexElement } = useContext(ContextData);
-  // TODO: for future drag drop implementation prototype
-  // function handleDragOver(e:React.DragEvent)
-  // {
-  //   console.log("DragOber",e);
-  //   e.preventDefault();
-
-  // }
-
-  // function handleOnDrop(e:React.DragEvent)
-  // {
-
-  //   console.log("Dragged",e.dataTransfer.getData("widgetDData"));
-
-  // }
-
+  /**
+   *
+   * @param indexOfElement index of current element
+   * @param column - whole column object
+   * @param indexOfColumn - index of current column
+   * @param lengthOfColumnArray - column length in row object
+   * @returns
+   */
   function returnAppropriateColumnComponent(
     indexOfElement: number,
     column: IHomePageColumnElement,
-    indexOfColumn: number
+    indexOfColumn: number,
+    lengthOfColumnArray: number
   ): React.ReactNode {
     switch (column?.contentType) {
       case UNSET:
@@ -69,6 +63,7 @@ const Home = () => {
             columnID={column?.id}
             rowIndex={indexOfElement}
             columnIndex={indexOfColumn}
+            columnArrayLength={lengthOfColumnArray}
           >
             <TextPreview
               data={column?.data || ""}
@@ -84,6 +79,7 @@ const Home = () => {
             columnID={column?.id}
             rowIndex={indexOfElement}
             columnIndex={indexOfColumn}
+            columnArrayLength={lengthOfColumnArray}
           >
             <ImagePreview key={column?.id} imageSource={column?.data || ""} />
           </WrapperColumn>
@@ -107,11 +103,6 @@ const Home = () => {
   return (
     <div>
       <Header />
-
-      {/* <div className={styles.homeDrag} onDrop={(e)=>handleOnDrop(e)} onDragOver={(e)=>handleDragOver(e)}>
-
-
-</div> */}
       <div className={styles.homePageElements}>
         {homePageElements?.map(
           (element: IHomePageElement, indexOfElement: number) => {
@@ -145,7 +136,8 @@ const Home = () => {
                           returnAppropriateColumnComponent(
                             indexOfElement,
                             column,
-                            indexOfColumn
+                            indexOfColumn,
+                            element?.columns?.length || 1
                           )
                       )}
                     </div>
