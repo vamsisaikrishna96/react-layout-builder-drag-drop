@@ -1,0 +1,30 @@
+.columnsContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+  }
+
+.column {
+    width: 100px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    flex-direction: column;
+    border: 1px solid #d5e9eb;
+    transition: all 0.4s ease;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .column:hover {
+    transform: rotate(15deg);
+    background-color: #cbd3d4;
+  }
+  
+  .icon {
+    width: 16px;
+    height: 16px;
+  }

@@ -1,10 +1,16 @@
 import styles from "./Sidebar.module.css";
 import closeSVG from "../../assets/icons/close.svg";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContextData } from "../../context/ContextProvider";
 
 const Sidebar = () => {
-  const { sideBarVisibility, setSideBarVisibility } = useContext(ContextData);
+  const { sideBarVisibility, setSideBarVisibility, childComponent } =
+    useContext(ContextData);
+  const [component, setComponent] = useState<React.ReactNode>(null);
+
+  useEffect(() => {
+    if (sideBarVisibility) setComponent(childComponent);
+  }, [sideBarVisibility]);
 
   return (
     <div
@@ -22,6 +28,8 @@ const Sidebar = () => {
           <img src={closeSVG} className={styles.closeIcon} />
         </div>
         {/* Code for close icon for dismissing sidebar end */}
+
+        {component}
       </div>
     </div>
   );

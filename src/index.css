@@ -8,15 +8,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 body {
   margin: 0;
-
+  background-color: #bdd3d9;
   min-width: 320px;
   min-height: 100vh;
 }
-
-
-
-

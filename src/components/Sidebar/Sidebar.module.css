@@ -3,13 +3,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 300px;
+  width: 250px;
   height: 100%;
   right: 0;
   margin-top: 7px;
-  transform: translateX(110%);
+  /* 112%- 30px of dismiss icon is 12% of total width 250px  */
+  transform: translateX(112%);
   transition: all 0.4s ease-in-out;
-  border: 1px solid blueviolet;
 }
 
 /* TODO: Drafted work for sidebar shawdow implementation */
