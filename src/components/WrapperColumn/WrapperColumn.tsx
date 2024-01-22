@@ -11,12 +11,14 @@ import {
   IHomePageElement,
 } from "../../interfaces/HomePageElement";
 import { ICurrentIndex } from "../../interfaces/currentIndexOfElement";
+import MediaEditor from "../Sidebar/MediaEditor/MediaEditor";
 
 export interface IWrapperColumn {
   children: React.ReactNode;
   columnID: string;
   rowIndex: number;
   columnIndex: number;
+  columnArrayLength: number;
 }
 
 const WrapperColumn = ({
@@ -24,6 +26,7 @@ const WrapperColumn = ({
   columnID,
   rowIndex,
   columnIndex,
+  columnArrayLength,
 }: IWrapperColumn) => {
   const {
     setChildComponentIndexVisibility,
@@ -33,6 +36,9 @@ const WrapperColumn = ({
     currentIndexElement,
   } = useContext(ContextData);
 
+  /**
+   * as this is not a straight forward task, setting up required states and passing data to the context
+   */
   function addColumnToExistingRow() {
     setAddColumn(true);
     const newElementColumnIndex: ICurrentIndex = {
@@ -75,17 +81,20 @@ const WrapperColumn = ({
           <img className={globalStyles.icon} src={addSVG} alt="add" />
         </div>
       </div>
-      <div
-        className={`${styles.wrapperActions} ${styles.wrapperActionIcons} ${columnIndex === 0 ? styles.disabledIcon : ""}`}
-      >
+      <div className={`${styles.wrapperActions} ${styles.wrapperActionIcons} `}>
         <img
           className={`${globalStyles.icon} `}
           src={editSVG}
-          //   onClick={() => addNewColumnToTheRow()}
+          onClick={() =>
+            setChildComponentIndexVisibility(<MediaEditor />, {
+              columnIndex,
+              elementIndex: rowIndex,
+            })
+          }
         />
 
         <img
-          className={`${globalStyles.icon} `}
+          className={`${globalStyles.icon} ${columnIndex === 0 && columnArrayLength === 1 ? styles.disabledIcon : ""} `}
           src={deleteSVG}
           onClick={() => removeColumnFromRow()}
         />

@@ -67,7 +67,7 @@ const WrapperRow = ({
         </div>
       </div>
       <div
-        className={`${styles.wrapperActions} ${styles.wrapperActionIcons} ${rowIndex === 0 ? styles.disabledIcon : ""}`}
+        className={`${styles.wrapperActions} ${styles.wrapperActionIcons} ${rowIndex === 0 && elementsLength == 1 ? styles.disabledIcon : ""}`}
       >
         <img
           className={`${globalStyles.icon} `}

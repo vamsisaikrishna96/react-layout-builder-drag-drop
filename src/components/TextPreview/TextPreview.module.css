@@ -11,3 +11,12 @@
   font-weight: bold;
   justify-content: flex-start;
 }
+
+.textPreviewSubHeadline {
+  font-size: 14px;
+}
+
+.textPreviewParagraph {
+  font-size: 12px;
+  font-weight: normal;
+}

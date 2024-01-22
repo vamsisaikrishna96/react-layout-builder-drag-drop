@@ -11,4 +11,5 @@ export const STRING_CONSTANTS = {
   COLUMN: "COLUMN",
   ADD_NEW_ROW: "ADD NEW ROW",
   ADD_NEW_ELEMENT: "ADD NEW ELEMENT",
+  ITEM_TO_BE_ADDED: "itemTobeAdded",
 };
