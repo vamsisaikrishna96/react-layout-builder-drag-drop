@@ -4,7 +4,7 @@ Developed minimal version of layout builder in this repository which can drag an
 
 Currently, this application has the below features:
 - Add Rows with columns
-- There is a ==Media Editor== by which you can add data to the elements post adding them to the columns.
+- There is a **MEDIA EDITOR** by which you can add data to the elements post adding them to the columns.
 - A wrapper is developed around each column / row and has the below functionalities.
   Row
   - Wrapper is only visible and actionable on hover
@@ -16,15 +16,15 @@ Currently, this application has the below features:
     
   Column
   - Wrapper is only visible and actionable on hover
-  - ==Drag and Drop== elements directly into columns
-  - Columns are of 4 types - 3 text and 1 image
+  - **DRAG AND DROP** elements directly into columns
+  - Columns are of **4 types - 3 text and 1 image**
   - Difference of font, font-weight indicates the type of text. for example: Heading, Sub-Heading, Paragraph
   - Add a column by clicking the plus icon on the wrapper.
   - Delete a column by clicking the delete icon on the wrapper.
   - Orange bordered wrapper indicates column in the application.
 
  There is no CSS library used for styling the application. ==Plain CSS== has been used for development.
- Written in pure typescript by adding interfaces and return types wherever required.
+ Written in pure **TYPESCRIPT** by adding interfaces and return types wherever required.
 
  Choosed Vite as it is faster due to its module bundling process when compared to CRA(Create React App).
 
