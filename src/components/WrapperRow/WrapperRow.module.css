@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid transparent;
 }
 
 .wrapperAddRowButton {
@@ -12,7 +13,7 @@
   bottom: -9px;
   left: 50%;
   cursor: pointer;
-  background-color: aquamarine;
+  background-color: cornflowerblue;
   border-radius: 50%;
   visibility: hidden;
 }
@@ -27,11 +28,10 @@
 
 .wrapperActions {
   position: absolute;
-  top: -11px;
+  top: -23px;
   padding: 3px;
   cursor: pointer;
-  background-color: aquamarine;
-  border-radius: 10px;
+  background-color: cornflowerblue;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -41,11 +41,11 @@
 }
 
 .wrapperActionIcons {
-  left: calc(100% - 21px);
+  left: calc(100% - 19px);
 }
 
 .wrapperMoveUpDownActions {
-  right: calc(100% - 48px);
+  right: calc(100% - 46px);
 }
 
 .disabledIcon {
@@ -54,7 +54,7 @@
 }
 
 .wrapperRowContainer:hover {
-  border: 2px solid blue;
+  border: 2px solid cornflowerblue;
 }
 
 .wrapperRowContainer:hover .wrapperAddRowButton {

@@ -4,7 +4,6 @@ import globalStyles from "../../styles/global.module.css";
 import AddRow from "../Sidebar/AddRow/AddRow";
 import { useContext } from "react";
 import { ContextData } from "../../context/ContextProvider";
-import editSVG from "../../assets/icons/settings.svg";
 import deleteSVG from "../../assets/icons/trash.svg";
 import arrowUpSVG from "../../assets/icons/arrow-up.svg";
 import arrowDownSVG from "../../assets/icons/arrow-down.svg";
@@ -24,7 +23,7 @@ const WrapperRow = ({
   elementsLength,
 }: IWrapperRow) => {
   const {
-    setChildComponentAndVisibility,
+    setChildComponentIndexVisibility,
     homePageElements,
     setHomePageElements,
   } = useContext(ContextData);
@@ -61,7 +60,7 @@ const WrapperRow = ({
     <div className={styles.wrapperRowContainer}>
       <div
         className={styles.wrapperAddRowButton}
-        onClick={() => setChildComponentAndVisibility(<AddRow />)}
+        onClick={() => setChildComponentIndexVisibility(<AddRow />)}
       >
         <div className={styles.wrapperAddRowIcon}>
           <img className={globalStyles.icon} src={addSVG} alt="add" />

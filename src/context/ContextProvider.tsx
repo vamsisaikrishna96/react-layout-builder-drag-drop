@@ -1,4 +1,4 @@
-import React, { createContext, useId, useState } from "react";
+import React, { createContext, useState } from "react";
 import { IHomePageElement } from "../interfaces/HomePageElement";
 import { STRING_CONSTANTS } from "../utils/stringConstants";
 import { ICurrentIndex } from "../interfaces/currentIndexOfElement";
@@ -15,7 +15,7 @@ interface IContextProps {
   setChildComponent: React.Dispatch<React.SetStateAction<React.ReactNode>>;
   homePageElements: IHomePageElement[];
   setHomePageElements: React.Dispatch<React.SetStateAction<IHomePageElement[]>>;
-  setChildComponentAndVisibility: (
+  setChildComponentIndexVisibility: (
     component: React.ReactNode,
     elementIndex?: ICurrentIndex
   ) => void;
@@ -23,6 +23,8 @@ interface IContextProps {
   setCurrentIndexElement: React.Dispatch<
     React.SetStateAction<ICurrentIndex | undefined>
   >;
+  addColumn: boolean;
+  setAddColumn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const ContextData: React.Context<IContextProps> = createContext(
@@ -39,8 +41,14 @@ const ContextProvider = ({ children }: AppProviderComponentProps) => {
   const [currentIndexElement, setCurrentIndexElement] = useState<
     ICurrentIndex | undefined
   >({ elementIndex: null, columnIndex: null });
+  const [addColumn, setAddColumn] = useState<boolean>(false);
 
-  function setChildComponentAndVisibility(
+  /**
+   *
+   * @param component component to render
+   * @param elementIndex this is basically a object which contains both row and column index to update the data
+   */
+  function setChildComponentIndexVisibility(
     component: React.ReactNode,
     elementIndex?: ICurrentIndex
   ) {
@@ -60,9 +68,11 @@ const ContextProvider = ({ children }: AppProviderComponentProps) => {
         setChildComponent,
         homePageElements,
         setHomePageElements,
-        setChildComponentAndVisibility,
+        setChildComponentIndexVisibility,
         currentIndexElement,
         setCurrentIndexElement,
+        addColumn,
+        setAddColumn,
       }}
     >
       {children}

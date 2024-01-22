@@ -7,20 +7,20 @@ import AddRow from "../Sidebar/AddRow/AddRow";
 import AddElement from "../Sidebar/AddElement/AddElement";
 
 const Header = () => {
-  const { setChildComponentAndVisibility } = useContext(ContextData);
+  const { setChildComponentIndexVisibility } = useContext(ContextData);
 
   return (
     <div className={styles.header}>
       <div className={styles.headerActions}>
         <div
           className={styles.headerAction}
-          onClick={() => setChildComponentAndVisibility(<AddRow />)}
+          onClick={() => setChildComponentIndexVisibility(<AddRow />)}
         >
           <img className={styles.svgIcon} src={columnSVG} /> Add Column
         </div>
         <div
           className={styles.headerAction}
-          onClick={() => setChildComponentAndVisibility(<AddElement />)}
+          onClick={() => setChildComponentIndexVisibility(<AddElement />)}
         >
           <img className={styles.svgIcon} src={elementSVG} /> Add Element
         </div>
