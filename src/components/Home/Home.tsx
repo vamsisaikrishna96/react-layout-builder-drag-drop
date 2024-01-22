@@ -13,13 +13,13 @@ import styles from "./Home.module.css";
 import TextPreview from "../TextPreview/TextPreview";
 import ImagePreview from "../ImagePreview/ImagePreview";
 import WrapperRow from "../WrapperRow/WrapperRow";
+import WrapperColumn from "../WrapperColumn/WrapperColumn";
 
 const {
   HEADLINE,
   PARAGRAPH,
   SUB_HEADLINE,
   IMAGE,
-  COLUMN,
   UNSET,
   ADD_NEW_ELEMENT,
   ADD_NEW_ROW,
@@ -44,7 +44,7 @@ const Home = () => {
   function returnAppropriateColumnComponent(
     indexOfElement: number,
     column: IHomePageColumnElement,
-    indexOfColumn?: number
+    indexOfColumn: number
   ): React.ReactNode {
     switch (column?.contentType) {
       case UNSET:
@@ -64,15 +64,29 @@ const Home = () => {
       case SUB_HEADLINE:
       case PARAGRAPH:
         return (
-          <TextPreview
-            data={column?.data}
+          <WrapperColumn
             key={column?.id}
-            contentType={column?.contentType}
-          />
+            columnID={column?.id}
+            rowIndex={indexOfElement}
+            columnIndex={indexOfColumn}
+          >
+            <TextPreview
+              data={column?.data || ""}
+              key={column?.id}
+              contentType={column?.contentType}
+            />
+          </WrapperColumn>
         );
       case IMAGE:
         return (
-          <ImagePreview key={column?.id} imageSource={column?.data || ""} />
+          <WrapperColumn
+            key={column?.id}
+            columnID={column?.id}
+            rowIndex={indexOfElement}
+            columnIndex={indexOfColumn}
+          >
+            <ImagePreview key={column?.id} imageSource={column?.data || ""} />
+          </WrapperColumn>
         );
       default:
         return (
@@ -103,7 +117,11 @@ const Home = () => {
           (element: IHomePageElement, indexOfElement: number) => {
             return (
               <div key={element?.id} className={styles.elementWrapper}>
-                <WrapperRow rowID={element?.id} rowIndex={indexOfElement} elementsLength={homePageElements?.length}>
+                <WrapperRow
+                  rowID={element?.id}
+                  rowIndex={indexOfElement}
+                  elementsLength={homePageElements?.length}
+                >
                   {element.type === STRING_CONSTANTS.UNSET ? (
                     <EmptyElementHomeScreen
                       key={element?.id}

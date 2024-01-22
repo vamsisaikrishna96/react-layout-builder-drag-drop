@@ -14,11 +14,11 @@ const EmptyElementHomeScreen = ({
   buttonTitle,
   currentIndexElementColumn,
 }: IEmptyElementHomePage) => {
-  const { setChildComponentAndVisibility, currentIndexElement } =
+  const { setChildComponentIndexVisibility, currentIndexElement } =
     useContext(ContextData);
 
   function setIndexLoadSideBar() {
-    setChildComponentAndVisibility(componentToLoadSidebar, {
+    setChildComponentIndexVisibility(componentToLoadSidebar, {
       ...currentIndexElement,
       ...currentIndexElementColumn,
     });

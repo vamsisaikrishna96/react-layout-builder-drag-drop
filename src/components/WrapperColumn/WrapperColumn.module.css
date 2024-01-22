@@ -1,0 +1,63 @@
+.wrapperColumnContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+}
+
+.wrapperAddColumnButton {
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  cursor: pointer;
+  background-color: #e6a84c;
+  border-radius: 50%;
+  visibility: hidden;
+}
+
+.wrapperAddColumnIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+}
+
+.wrapperActions {
+  position: absolute;
+  top: -23px;
+  padding: 3px;
+  cursor: pointer;
+  background-color: #e6a84c;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  visibility: hidden;
+}
+
+.wrapperActionIcons {
+  /* 48px= two icons 16+16+ padding(6)+ gap(10) */
+  left: calc(100% - 47px);
+}
+
+.disabledIcon {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.wrapperColumnContainer:hover {
+  border: 2px solid #e6a84c;
+}
+
+.wrapperColumnContainer:hover .wrapperAddColumnButton {
+  visibility: visible;
+}
+
+.wrapperColumnContainer:hover .wrapperActions {
+  visibility: visible;
+}

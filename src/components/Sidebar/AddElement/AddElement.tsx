@@ -8,6 +8,7 @@ import {
 } from "../../../utils/AddElementPageData";
 import { useContext } from "react";
 import { ContextData } from "../../../context/ContextProvider";
+import { v4 as uuidv4 } from "uuid";
 
 const ELEMENTS: string[] = [STRING_CONSTANTS.TEXT, STRING_CONSTANTS.MEDIA];
 const AddElement = () => {
@@ -16,22 +17,30 @@ const AddElement = () => {
     setHomePageElements,
     setSideBarVisibility,
     currentIndexElement,
+    addColumn,
+    setAddColumn,
   } = useContext(ContextData);
 
   function updateColumnData(columnMedia: string) {
-    debugger;
     const homePageElementsData = [...homePageElements];
     const { columns } =
       homePageElementsData[currentIndexElement?.elementIndex as number];
     if (columns) {
-      columns[currentIndexElement?.columnIndex as number] = {
-        ...columns[currentIndexElement?.columnIndex as number],
-        contentType: columnMedia,
-      };
+      if (addColumn) {
+        columns?.push({
+          contentType: columnMedia,
+          id: uuidv4(),
+        });
+      } else {
+        columns[currentIndexElement?.columnIndex as number] = {
+          ...columns[currentIndexElement?.columnIndex as number],
+          contentType: columnMedia,
+        };
+      }
     }
 
     setHomePageElements([...homePageElementsData]);
-    debugger;
+    setAddColumn(false);
     setSideBarVisibility(false);
   }
 
