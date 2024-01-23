@@ -9,6 +9,8 @@ Currently, this application has the below features:
 - Add Rows with columns
 - There is a **MEDIA EDITOR** by which you can add data to the elements post adding them to the columns.
 - A wrapper is developed around each column / row and has the below functionalities.
+
+
   Row
   - Wrapper is only visible and actionable on hover
   - Re-arrange the rows up and down using arrows on row wrapper
